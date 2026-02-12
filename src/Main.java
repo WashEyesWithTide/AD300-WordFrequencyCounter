@@ -10,10 +10,20 @@ public class Main {
         while (true) {
             System.out.print("Enter a string:");
             input = scanner.nextLine();
+            for (char x: input.toCharArray()) {
+                if (Character.isUpperCase(x)) {
+                    input = input.replace(x, Character.toLowerCase(x));
+                }
+            }
             if (input.equals("exit")) {
                 break;
             }
             for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) == ',' || input.charAt(i) == '.' || input.charAt(i) == '!' || input.charAt(i) == '?') {
+                    input = input.substring(0, i) + input.substring(i + 1);
+                    i--;
+
+                }
                 if (input.charAt(i) == ' ') {
                     word = input.substring(0, i);
                     input = input.substring(i + 1);

@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Integer> map = new HashMap<>();
-
+        String input;
         while (true) {
             System.out.print("Enter a string:");
-            String input = scanner.nextLine();
+            input = scanner.nextLine();
             if (input.equals("exit")) {
                 break;
             }

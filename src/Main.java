@@ -1,5 +1,38 @@
+import java.util.Scanner;
+import java.util.HashMap;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+        HashMap<String, Integer> map = new HashMap<>();
+
+        while (true) {
+            System.out.print("Enter a string:");
+            String input = scanner.nextLine();
+            if (input.equals("exit")) {
+                break;
+            }
+            for (int i = 0; i < input.length(); i++) {
+                String word;
+                if (input.charAt(i) == ' ') {
+                    word = input.substring(0, i);
+                    input = input.substring(i + 1);
+                    i = -1;
+                } else if (i == input.length() - 1) {
+                    word = input;
+                } else {
+                    continue;
+                }
+                if (map.containsKey(word)) {
+                    map.put(word, map.get(word) + 1);
+                } else {
+                    map.put(word, 1);
+                }
+            }
+            for (String key : map.keySet()) {
+                System.out.println(key + ": " + map.get(key));
+            }
+        }
+        scanner.close();
     }
 }

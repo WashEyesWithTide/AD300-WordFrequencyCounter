@@ -6,6 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Integer> map = new HashMap<>();
         String input;
+        String word;
         while (true) {
             System.out.print("Enter a string:");
             input = scanner.nextLine();
@@ -13,7 +14,6 @@ public class Main {
                 break;
             }
             for (int i = 0; i < input.length(); i++) {
-                String word;
                 if (input.charAt(i) == ' ') {
                     word = input.substring(0, i);
                     input = input.substring(i + 1);

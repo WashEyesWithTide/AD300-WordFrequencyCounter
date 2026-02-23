@@ -8,7 +8,7 @@ public class Main {
         String input;
         String word;
         while (true) {
-            System.out.print("Enter a string:");
+            System.out.print("Enter a string: ");
             input = scanner.nextLine();
             for (char x: input.toCharArray()) {
                 if (Character.isUpperCase(x)) {
